@@ -1,3 +1,11 @@
+module.exports = {
+  addBookHandler,
+  getAllBooksHandler,
+  DetailBukuByIdHandler,
+  editBukuByIdHandler,
+  hapusBukuByIdHandler,
+};
+
 const { nanoid } = require('nanoid');
 // files
 const books = require('./books');
@@ -171,7 +179,7 @@ const getAllBooksHandler = (request, h) => {
   return response;
 };
 
-const getBookByIdHandler = (request, h) => {
+const DetailBukuByIdHandler = (request, h) => {
   const { bookId } = request.params;
 
   const book = books.filter((n) => n.id === bookId)[0]; // find book by id
@@ -198,7 +206,7 @@ const getBookByIdHandler = (request, h) => {
   return response;
 };
 
-const editBookByIdHandler = (request, h) => {
+const editBukuByIdHandler = (request, h) => {
   const { bookId } = request.params;
 
   const {
@@ -213,7 +221,6 @@ const editBookByIdHandler = (request, h) => {
   } = request.payload;
 
   if (!name) {
-    // Client tidak melampirkan properti name pada request body
     const response = h
       .response({
         status: 'fail',
@@ -265,7 +272,6 @@ const editBookByIdHandler = (request, h) => {
     return response;
   }
 
-  // id yang dilampirkan oleh client tidak ditemukkan oleh server
   const response = h
     .response({
       status: 'fail',
@@ -275,7 +281,7 @@ const editBookByIdHandler = (request, h) => {
   return response;
 };
 
-const deleteBookByIdHandler = (request, h) => {
+const hapusBukuByIdHandler = (request, h) => {
   const { bookId } = request.params;
 
   const index = books.findIndex((note) => note.id === bookId); // find book by id
@@ -295,16 +301,8 @@ const deleteBookByIdHandler = (request, h) => {
   const response = h
     .response({
       status: 'fail',
-      message: 'Buku gagal dihapus. Id tidak ditemukan',
+      message: 'Buku gagal dihapus. Id Buku tidak ditemukan',
     })
     .code(404);
   return response;
-};
-
-module.exports = {
-  addBookHandler,
-  getAllBooksHandler,
-  getBookByIdHandler,
-  editBookByIdHandler,
-  deleteBookByIdHandler,
 };
