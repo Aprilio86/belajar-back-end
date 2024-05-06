@@ -1,16 +1,13 @@
 # 📃 Description
 
-Projek ini adalah submission dari Dicoding untuk kelas Belajar Membuat Aplikasi Back-End untuk Pemula. Kelas ini memiliki 1 submission yang harus diselesaikan untuk mendapatkan sertifikat.
+Projek ini berupa submission untuk mendapatkan sertifikat dari Dicoding, modul (Belajar Membuat Aplikasi Back-End)
 
-Submission 1 dengan kriteria fitur:
+Kriteria:
 
-- Proyek Bookshelf API harus memenuhi seluruh pengujian otomatis pada Postman request yang bertanda **Mandatory**. Bila salah satu pengujiannya gagal, maka proyek Anda akan kami tolak,
-- Tambahkan fitur query parameters `?name`, `?reading` dan `?finished` pada route GET /books,
-- Menerapkan CORS pada seluruh resource yang ada,
-- Menggunakan ESLint dan salah satu style guide agar gaya penulisan kode JavaScript lebih konsisten,
+- Proyek Bookshelf API harus lolos semua pengujian otomatis yang ditandai sebagai Mandatory dalam request Postman. Jika ada pengujiannya yang tidak berhasil, proyek akan ditolak.
+- Tambahkan kemampuan untuk melakukan filter menggunakan query parameters ?name, ?reading, dan ?finished pada route GET /books.
+- Terapkan CORS pada semua bagian dari API.
+- Gunakan ESLint dan salah satu panduan gaya penulisan agar kode JavaScript terlihat lebih konsisten.
 
 > Submission 1 diharuskan menggunakan bahasa Javascript NodeJS dengan framework Hapi.
 
-## 👨🏻‍💻 Tech Stack
-
-Backend menggunakan library @hapi/hapi, eslint, dan nanoid.
